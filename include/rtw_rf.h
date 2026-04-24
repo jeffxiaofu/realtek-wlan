@@ -208,7 +208,7 @@ typedef enum _REGULATION_TXPWR_LMT {
 extern const char *const _regd_str[];
 #define regd_str(regd) (((regd) > TXPWR_LMT_WW) ? _regd_str[TXPWR_LMT_WW] : _regd_str[(regd)])
 
-#if 0
+#if CONFIG_TXPWR_LIMIT
 struct regd_exc_ent {
 	_list list;
 	char country[2];
@@ -231,7 +231,7 @@ void rtw_txpwr_lmt_add(struct rf_ctl_t *rfctl, const char *regd_name
 struct txpwr_lmt_ent *_rtw_txpwr_lmt_get_by_name(struct rf_ctl_t *rfctl, const char *regd_name);
 struct txpwr_lmt_ent *rtw_txpwr_lmt_get_by_name(struct rf_ctl_t *rfctl, const char *regd_name);
 void rtw_txpwr_lmt_list_free(struct rf_ctl_t *rfctl);
-#endif /* CONFIG_TXPWR_LIMIT */
+#endif /* 0 */
 
 #define BB_GAIN_2G 0
 #ifdef CONFIG_IEEE80211_BAND_5GHZ
