@@ -2743,6 +2743,14 @@ PHY_SetTxPowerIndexByRateArray(
 	}
 }
 
+PHY_GetTxPowerLimit(_adapter *adapter
+	, const char *regd_name
+	, BAND_TYPE band, enum channel_width bw
+	, u8 rfpath, u8 rate, u8 ntx_idx, u8 cch)
+{
+	return 0;
+}
+
 #if 0
 const char *const _txpwr_lmt_rs_str[] = {
 	"CCK",
