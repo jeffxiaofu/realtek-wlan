@@ -2743,7 +2743,7 @@ PHY_SetTxPowerIndexByRateArray(
 	}
 }
 
-#ifdef CONFIG_TXPWR_LIMIT
+#if 0
 const char *const _txpwr_lmt_rs_str[] = {
 	"CCK",
 	"OFDM",
@@ -3403,7 +3403,7 @@ phy_set_tx_power_limit(
 	IN	u8				*PowerLimit
 )
 {
-#ifdef CONFIG_TXPWR_LIMIT
+#if 0
 	PADAPTER Adapter = pDM_Odm->adapter;
 	HAL_DATA_TYPE *pHalData = GET_HAL_DATA(Adapter);
 	u8 band = 0, bandwidth = 0, tlrs = 0, channel;
@@ -3629,7 +3629,7 @@ bool phy_is_tx_power_limit_needed(_adapter *adapter)
 	HAL_DATA_TYPE *hal_data = GET_HAL_DATA(adapter);
 	struct registry_priv *regsty = dvobj_to_regsty(adapter_to_dvobj(adapter));
 
-#ifdef CONFIG_TXPWR_LIMIT
+#if 0
 	if (regsty->RegEnableTxPowerLimit == 1
 		|| (regsty->RegEnableTxPowerLimit == 2 && hal_data->EEPROMRegulatory == 1))
 		return _TRUE;
@@ -3687,7 +3687,7 @@ exit:
 	return ret;
 }
 
-#ifdef CONFIG_TXPWR_LIMIT
+#if 0
 int phy_load_tx_power_limit(_adapter *adapter, u8 chk_file)
 {
 	HAL_DATA_TYPE *hal_data = GET_HAL_DATA(adapter);
@@ -3739,7 +3739,7 @@ void phy_load_tx_power_ext_info(_adapter *adapter, u8 chk_file)
 	)
 		phy_load_tx_power_by_rate(adapter, chk_file);
 
-#ifdef CONFIG_TXPWR_LIMIT
+#if 0
 	if (phy_is_tx_power_limit_needed(adapter))
 		phy_load_tx_power_limit(adapter, chk_file);
 #endif
