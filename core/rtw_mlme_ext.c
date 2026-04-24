@@ -19,6 +19,8 @@
 	#include <rtw_wifi_regd.h>
 #endif /* CONFIG_IOCTL_CFG80211 */
 #include <hal_data.h>
+#include <rtw_rf.h>
+
 
 
 struct mlme_handler mlme_sta_tbl[] = {
