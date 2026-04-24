@@ -592,7 +592,7 @@ static u8 init_channel_set(_adapter *padapter, u8 ChannelPlan, RT_CHANNEL_INFO *
 	return chanset_size;
 }
 
-#ifdef CONFIG_TXPWR_LIMIT
+#if 0
 void rtw_txpwr_init_regd(struct rf_ctl_t *rfctl)
 {
 	u8 regd;
@@ -701,7 +701,7 @@ void rtw_rfctl_init(_adapter *adapter)
 	rfctl->max_chan_nums = init_channel_set(adapter, rfctl->ChannelPlan, rfctl->channel_set);
 	init_channel_list(adapter, rfctl->channel_set, &rfctl->channel_list);
 
-#ifdef CONFIG_TXPWR_LIMIT
+#if 0
 	_rtw_mutex_init(&rfctl->txpwr_lmt_mutex);
 	_rtw_init_listhead(&rfctl->reg_exc_list);
 	_rtw_init_listhead(&rfctl->txpwr_lmt_list);
@@ -718,7 +718,7 @@ void rtw_rfctl_deinit(_adapter *adapter)
 {
 	struct rf_ctl_t *rfctl = adapter_to_rfctl(adapter);
 
-#ifdef CONFIG_TXPWR_LIMIT
+#if 0
 	rtw_regd_exc_list_free(rfctl);
 	rtw_txpwr_lmt_list_free(rfctl);
 	_rtw_mutex_free(&rfctl->txpwr_lmt_mutex);
@@ -1229,7 +1229,7 @@ void dump_cur_chset(void *sel, _adapter *adapter)
 	else
 		RTW_PRINT_SEL(sel, "chplan:0x%02X\n", rfctl->ChannelPlan);
 
-#ifdef CONFIG_TXPWR_LIMIT
+#if 0
 	RTW_PRINT_SEL(sel, "PLS regd:%s\n", rfctl->regd_name);
 #endif
 
@@ -15436,7 +15436,7 @@ u8 set_chplan_hdl(_adapter *padapter, unsigned char *pbuf)
 
 	rfctl->max_chan_nums = init_channel_set(padapter, rfctl->ChannelPlan, rfctl->channel_set);
 	init_channel_list(padapter, rfctl->channel_set, &rfctl->channel_list);
-#ifdef CONFIG_TXPWR_LIMIT
+#if 0
 	rtw_txpwr_init_regd(rfctl);
 #endif
 
