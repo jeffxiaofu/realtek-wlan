@@ -245,6 +245,8 @@ struct hal_spec_t {
 	u8 proto_cap;	/* value of PROTO_CAP_XXX */
 	u8 wl_func;		/* value of WL_FUNC_XXX */
 	u8 hci_type;	/* value of HCI Type */
+	u8 txgi_max;
+	u8 txgi_pdbm;
 };
 
 #define HAL_SPEC_CHK_RF_PATH_2G(_spec, _path) ((_spec)->rfpath_num_2g > (_path))
