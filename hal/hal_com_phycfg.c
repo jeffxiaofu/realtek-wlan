@@ -2742,7 +2742,7 @@ PHY_SetTxPowerIndexByRateArray(
 		PHY_SetTxPowerIndex(pAdapter, powerIndex, RFPath, Rates[i]);
 	}
 }
-
+s8
 PHY_GetTxPowerLimit(_adapter *adapter
 	, const char *regd_name
 	, BAND_TYPE band, enum channel_width bw
