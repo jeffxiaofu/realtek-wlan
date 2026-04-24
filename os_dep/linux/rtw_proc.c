@@ -64,7 +64,7 @@ inline struct proc_dir_entry *rtw_proc_create_dir(const char *name, struct proc_
 }
 
 inline struct proc_dir_entry *rtw_proc_create_entry(const char *name, struct proc_dir_entry *parent,
-	const struct file_operations *fops, void * data)
+	const struct proc_ops *fops, void * data)
 {
 	struct proc_dir_entry *entry;
 
@@ -232,7 +232,7 @@ static ssize_t rtw_drv_proc_write(struct file *file, const char __user *buffer, 
 	return -EROFS;
 }
 
-static const struct file_operations rtw_drv_proc_seq_fops = {
+static const struct proc_ops rtw_drv_proc_seq_fops = {
 	.owner = THIS_MODULE,
 	.open = rtw_drv_proc_open,
 	.read = seq_read,
@@ -241,7 +241,7 @@ static const struct file_operations rtw_drv_proc_seq_fops = {
 	.write = rtw_drv_proc_write,
 };
 
-static const struct file_operations rtw_drv_proc_sseq_fops = {
+static const struct proc_ops rtw_drv_proc_sseq_fops = {
 	.owner = THIS_MODULE,
 	.open = rtw_drv_proc_open,
 	.read = seq_read,
@@ -2985,7 +2985,7 @@ static ssize_t rtw_adapter_proc_write(struct file *file, const char __user *buff
 	return -EROFS;
 }
 
-static const struct file_operations rtw_adapter_proc_seq_fops = {
+static const struct proc_ops rtw_adapter_proc_seq_fops = {
 	.owner = THIS_MODULE,
 	.open = rtw_adapter_proc_open,
 	.read = seq_read,
@@ -2994,7 +2994,7 @@ static const struct file_operations rtw_adapter_proc_seq_fops = {
 	.write = rtw_adapter_proc_write,
 };
 
-static const struct file_operations rtw_adapter_proc_sseq_fops = {
+static const struct proc_ops rtw_adapter_proc_sseq_fops = {
 	.owner = THIS_MODULE,
 	.open = rtw_adapter_proc_open,
 	.read = seq_read,
@@ -3157,7 +3157,7 @@ static ssize_t rtw_odm_proc_write(struct file *file, const char __user *buffer, 
 	return -EROFS;
 }
 
-static const struct file_operations rtw_odm_proc_seq_fops = {
+static const struct proc_ops rtw_odm_proc_seq_fops = {
 	.owner = THIS_MODULE,
 	.open = rtw_odm_proc_open,
 	.read = seq_read,
@@ -3166,7 +3166,7 @@ static const struct file_operations rtw_odm_proc_seq_fops = {
 	.write = rtw_odm_proc_write,
 };
 
-static const struct file_operations rtw_odm_proc_sseq_fops = {
+static const struct proc_ops rtw_odm_proc_sseq_fops = {
 	.owner = THIS_MODULE,
 	.open = rtw_odm_proc_open,
 	.read = seq_read,
@@ -3297,7 +3297,7 @@ static ssize_t rtw_mcc_proc_write(struct file *file, const char __user *buffer, 
 	return -EROFS;
 }
 
-static const struct file_operations rtw_mcc_proc_seq_fops = {
+static const struct proc_ops rtw_mcc_proc_seq_fops = {
 	.owner = THIS_MODULE,
 	.open = rtw_mcc_proc_open,
 	.read = seq_read,
@@ -3306,7 +3306,7 @@ static const struct file_operations rtw_mcc_proc_seq_fops = {
 	.write = rtw_mcc_proc_write,
 };
 
-static const struct file_operations rtw_mcc_proc_sseq_fops = {
+static const struct proc_ops rtw_mcc_proc_sseq_fops = {
 	.owner = THIS_MODULE,
 	.open = rtw_mcc_proc_open,
 	.read = seq_read,
