@@ -2828,9 +2828,9 @@ s8 phy_get_txpwr_lmt_abs(
 		is_ww_regd = 1;
 
 	if (!is_ww_regd) {
-		ent = _rtw_txpwr_lmt_get_by_name(rfctl, regd_name);
-		if (!ent)
-			goto release_lock;
+		// ent = _rtw_txpwr_lmt_get_by_name(rfctl, regd_name);
+		// if (!ent)
+		// 	goto release_lock;
 	}
 
 	ch_idx = phy_GetChannelIndexOfTxPowerLimit(Band, cch);
